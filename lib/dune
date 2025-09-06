@@ -1,0 +1,52 @@
+(include_subdirs unqualified)
+
+(library
+ (name nqcc)
+ (modules
+  address_taken
+  ast
+  assembly
+  assembly_symbols
+  backward_dataflow
+  cfg
+  codegen
+  compile
+  const
+  const_convert
+  constant_folding
+  copy_prop
+  dead_store_elim
+  disjoint_sets
+  emit
+  initializers
+  instruction_fixup
+  int8
+  label_loops
+  lex
+  optimize
+  optimize_utils
+  parse
+  regalloc
+  reg_set
+  replace_pseudos
+  resolve
+  rounding
+  symbols
+  tacky
+  tacky_gen
+  tacky_print
+  tokens
+  tok_stream
+  type_table
+  typecheck
+  types
+  type_utils
+  settings
+  unique_ids
+  unreachable_code_elim
+  utils)
+ (libraries re camlp-streams zarith integers)
+ (preprocess
+  (pps ppx_deriving.show ppx_deriving.eq ppx_deriving.ord))
+ (instrumentation
+  (backend bisect_ppx)))
